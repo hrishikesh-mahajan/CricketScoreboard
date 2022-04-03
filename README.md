@@ -2,6 +2,22 @@
 
 This is a simple C++ program to create a cricket scoreboard.
 
+## How to Build
+
+To build the project, run:
+
+```sh
+gcc main.cpp -o main
+```
+
+## How to Run
+
+To run the project, run:
+
+```sh
+./main
+```
+
 ## Sample Input and Output
 
 ```sh
