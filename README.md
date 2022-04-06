@@ -43,3 +43,9 @@ NO.     NAME    RUNS    BALLS   STRIKE RATE
 3.      Sachin  120     100     120
 4.      Dhoni   100     100     100
 ```
+
+## Co-authors
+
+- [Aman Narnaware](https://github.com/RealBeazt)
+- Vedant Amit Kulkarni
+- [Vedant Kulkarni](https://github.com/Vedantk0410)
