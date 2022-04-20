@@ -5,40 +5,40 @@ class cricketer
 {
 public:
     int runs, balls;
-    float runrate;
+    float strikeRate;
     char name[25];
 };
 
 int main()
 {
-    int n;
-    cricketer player[100], t;
+    int numberOfPlayers;
+    cricketer playersArray[100], temporaryPlayer;
     cout << "PROGRAM FOR CRICKET SCOREBOARD\n\n";
     cout << "Enter the number of cricket players : ";
-    cin >> n;
+    cin >> numberOfPlayers;
     cout << "\nEnter Player Info:\n\nNAME\tRUNS\tBALLS\n---------------------\n";
-    for (int i = 0; i < n; i++)
+    for (int idx = 0; idx < numberOfPlayers; idx++)
     {
-        cin >> player[i].name >> player[i].runs >> player[i].balls;
-        player[i].runrate = (float)player[i].runs / (float)player[i].balls;
+        cin >> playersArray[idx].name >> playersArray[idx].runs >> playersArray[idx].balls;
+        playersArray[idx].strikeRate = (float)playersArray[idx].runs / (float)playersArray[idx].balls;
     }
-    for (int i = 0; i < n; i++)
+    for (int iteration = 0; iteration < numberOfPlayers; iteration++)
     {
-        for (int j = 0; j < n - 1; j++)
+        for (int idx = 0; idx < numberOfPlayers - 1; idx++)
         {
-            if (player[j].runrate < player[j + 1].runrate)
+            if (playersArray[idx].runrate < playersArray[idx + 1].runrate)
             {
-                t = player[j];
-                player[j] = player[j + 1];
-                player[j + 1] = t;
+                temporaryPlayer = playersArray[idx];
+                playersArray[idx] = playersArray[idx + 1];
+                playersArray[idx + 1] = temporaryPlayer;
             }
         }
     }
     cout << "\n\nSCOREBOARD:\n";
     cout << "\nNO.\tNAME\tRUNS\tBALLS\tSTRIKE RATE\n";
     cout << "-------------------------------------------\n";
-    for (int i = 0; i < n; i++)
+    for (int idx = 0; idx < numberOfPlayers; idx++)
     {
-        cout << i + 1 << ".\t" << player[i].name << "\t" << player[i].runs << "\t" << player[i].balls << "\t" << player[i].runrate << "\n";
+        cout << idx + 1 << ".\t" << playersArray[idx].name << "\t" << playersArray[idx].runs << "\t" << playersArray[idx].balls << "\t" << playersArray[idx].strikeRate << "\n";
     }
 }
