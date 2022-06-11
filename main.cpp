@@ -15,22 +15,32 @@ int main()
 {
     int numberOfPlayers;
     cricketer playersArray[100];
-    cout << "PROGRAM FOR CRICKET SCOREBOARD\n\n";
+    cout << "PROGRAM FOR CRICKET SCOREBOARD" << "\n\n";
     cout << "Enter the number of cricket players : ";
     cin >> numberOfPlayers;
-    cout << "\nEnter Player Info:\n\nNAME\tRUNS\tBALLS\n---------------------\n";
+    cout << "\n";
+    cout << "Enter Player Info:" << "\n\n";
+    cout << "NAME" << "\t" << "RUNS" << "\t" << "BALLS" << "\n";
+    cout << "---------------------" << "\n";
     for (int idx = 0; idx < numberOfPlayers; idx++)
     {
-        cin >> playersArray[idx].name >> playersArray[idx].runs >> playersArray[idx].balls;
+        cin >> playersArray[idx].name;
+        cin >> playersArray[idx].runs;
+        cin >> playersArray[idx].balls;
         playersArray[idx].strikeRate = (float)playersArray[idx].runs / (float)playersArray[idx].balls;
     }
     quicksort(playersArray, 0, numberOfPlayers - 1);
-    cout << "\n\nSCOREBOARD:\n";
-    cout << "\nNO.\tNAME\tRUNS\tBALLS\tSTRIKE RATE\n";
-    cout << "-------------------------------------------\n";
+    cout << "\n\n";
+    cout << "SCOREBOARD:" << "\n\n";
+    cout << "NO." << "\t" << "NAME" << "\t" << "RUNS" << "\t" << "BALLS" << "\t" << "STRIKE RATE" << "\n";
+    cout << "-------------------------------------------" << "\n";
     for (int idx = 0; idx < numberOfPlayers; idx++)
     {
-        cout << idx + 1 << ".\t" << playersArray[idx].name << "\t" << playersArray[idx].runs << "\t" << playersArray[idx].balls << "\t" << playersArray[idx].strikeRate << "\n";
+        cout << idx + 1 << "." << "\t";
+        cout << playersArray[idx].name << "\t";
+        cout << playersArray[idx].runs << "\t";
+        cout << playersArray[idx].balls << "\t";
+        cout << playersArray[idx].strikeRate << "\n";
     }
 }
 
