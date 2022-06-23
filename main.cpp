@@ -7,9 +7,8 @@ public:
     int runs, balls;
     float strikeRate;
     char name[25];
+    static void quicksort(cricketer arr[], int left, int right);
 };
-
-void quicksort(cricketer arr[], int left, int right);
 
 int main()
 {
@@ -29,7 +28,7 @@ int main()
         cin >> playersArray[idx].balls;
         playersArray[idx].strikeRate = (float)playersArray[idx].runs / (float)playersArray[idx].balls;
     }
-    quicksort(playersArray, 0, numberOfPlayers - 1);
+    cricketer::quicksort(playersArray, 0, numberOfPlayers - 1);
     cout << "\n\n";
     cout << "SCOREBOARD:" << "\n\n";
     cout << "NO." << "\t" << "NAME" << "\t" << "RUNS" << "\t" << "BALLS" << "\t" << "STRIKE RATE" << "\n";
@@ -44,7 +43,7 @@ int main()
     }
 }
 
-void quicksort(cricketer arr[], int left, int right)
+void cricketer::quicksort(cricketer arr[], int left, int right)
 {
     int i = left, j = right;
     cricketer tmp;
