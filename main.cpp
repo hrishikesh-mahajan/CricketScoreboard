@@ -10,14 +10,32 @@ public:
     static void quicksort(cricketer arr[], int left, int right);
 };
 
+void getPlayerCount(int &numberOfPlayers);
+
+void getPlayerInfo(int numberOfPlayers, cricketer playersArray[100]);
+
+void printScoreBoard(int numberOfPlayers, cricketer playersArray[100]);
+
 int main()
 {
     int numberOfPlayers;
     cricketer playersArray[100];
     cout << "PROGRAM FOR CRICKET SCOREBOARD" << "\n\n";
+    getPlayerCount(numberOfPlayers);
+    getPlayerInfo(numberOfPlayers, playersArray);
+    cricketer::quicksort(playersArray, 0, numberOfPlayers - 1);
+    printScoreBoard(numberOfPlayers, playersArray);
+}
+
+void getPlayerCount(int &numberOfPlayers)
+{
     cout << "Enter the number of cricket players : ";
     cin >> numberOfPlayers;
     cout << "\n";
+}
+
+void getPlayerInfo(int numberOfPlayers, cricketer playersArray[100])
+{
     cout << "Enter Player Info:" << "\n\n";
     cout << "NAME" << "\t" << "RUNS" << "\t" << "BALLS" << "\n";
     cout << "---------------------" << "\n";
@@ -28,8 +46,11 @@ int main()
         cin >> playersArray[idx].balls;
         playersArray[idx].strikeRate = (float)playersArray[idx].runs / (float)playersArray[idx].balls;
     }
-    cricketer::quicksort(playersArray, 0, numberOfPlayers - 1);
     cout << "\n\n";
+}
+
+void printScoreBoard(int numberOfPlayers, cricketer playersArray[100])
+{
     cout << "SCOREBOARD:" << "\n\n";
     cout << "NO." << "\t" << "NAME" << "\t" << "RUNS" << "\t" << "BALLS" << "\t" << "STRIKE RATE" << "\n";
     cout << "-------------------------------------------" << "\n";
